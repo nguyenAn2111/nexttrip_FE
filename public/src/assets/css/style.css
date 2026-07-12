@@ -31,7 +31,7 @@ body {
 .brand {
   font-size: 18px;
   font-weight: 700;
-  color: #2e7d32;
+  color: #276FBC;
   margin-bottom: 25px;
 }
 
@@ -68,16 +68,16 @@ body {
 
 /* hover */
 .menu-item:hover {
-  background: #e8f5e9;
+  background: #7bbbe9;
   transform: translateX(4px);
 }
 
 /* active */
 .menu-item.active {
-  background: linear-gradient(90deg, #66bb6a, #2e7d32);
+  background: linear-gradient(90deg, #2d6ac1, #72afd1);
   color: white;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 4px 12px rgba(91, 156, 226, 0.3);
 }
 
 /* icon khi active */
@@ -102,6 +102,7 @@ body {
 .topbar-title {
   font-size: 20px;
   font-weight: 600;
+  color: #276FBC;
 }
 
 .topbar-user {

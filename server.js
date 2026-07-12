@@ -4,7 +4,7 @@ const path = require("path")
 
 const PORT = 4700
 
-const baseDir = path.join(__dirname, "public/pdt")
+const baseDir = path.join(__dirname, "public/src")
 
 const server = http.createServer((req, res) => {
 
