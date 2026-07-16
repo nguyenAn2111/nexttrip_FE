@@ -3,8 +3,21 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>nexttrip</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NextTrip</title>
+
+  <link rel="stylesheet" href="assets/styles/reset.css">
+
+  <link rel="stylesheet" href="assets/styles/common.css">
+
+  <link rel="stylesheet" href="assets/styles/layout.css">
+
+  <link rel="stylesheet" href="components/menu/menu.css">
+  <link rel="stylesheet" href="components/button/button.css">
+  <link rel="stylesheet" href="components/table/table.css">
+  <link rel="stylesheet" href="components/filter/filter.css">
+  <link rel="stylesheet" href="components/modal/modal.css">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
@@ -13,39 +26,45 @@
 
     <aside class="sidebar">
       <div class="sidebar-top">
-        <div class="brand">NextTrip</div>
-        <div class="brand">AI Powered Trip Planner</div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="assets/icons/logo.png" alt="NextTrip logo"
+            style="width: 52px; height: auto; object-fit: contain; flex-shrink: 0; margin-top: -4px;">
+
+          <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+            <div class="brand" style="font-size: 30px; font-weight: 600; margin: 0;">
+              Next Trip
+            </div>
+
+            <div class="brand" style="font-size: 15px; font-weight: 500; margin-top: 2px; color: var(--primary);">
+              AI Powered Trip Planner
+            </div>
+          </div>
+        </div>
 
         <nav class="menu">
-          <a href="#" class="menu-item active" data-page="course-management">
-            <i class="bi bi-journal-bookmark"></i>
+          <a href="#" class="menu-item active" data-page="home">
+            <i class="bi bi-house-heart"></i>
             <span>Tổng quan</span>
           </a>
 
-          <a href="#" class="menu-item" data-page="course-approval">
-            <i class="bi bi-check2-square"></i>
-            <span>Trợ lý AI</span>
+          <a href="#" class="menu-item" data-page="ai_chat">
+            <i class="bi bi-robot"></i> <span>Trợ lý AI</span>
           </a>
 
-          <a href="#" class="menu-item" data-page="course-setting">
-            <i class="bi bi-gear"></i>
-            <span>Chuyến đi của tôi</span>
-          </a>
-          <a href="#" class="menu-item" data-page="">
-            <i class="bi bi-gear"></i>
-            <span>Kế hoạch đồng hành</span>
-          </a>
-          <a href="#" class="menu-item" data-page="">
-            <i class="bi bi-gear"></i>
-            <span>Kế hoạch đồng hành</span>
+          <a href="#" class="menu-item" data-page="trip">
+            <i class="bi bi-geo-alt"></i> <span>Chuyến đi của tôi</span>
           </a>
 
-          <!-- <a href="#" class="menu-item" data-page="semester-setting">Cài đặt kỳ học</a> -->
+          <a href="#" class="menu-item" data-page="companion">
+            <i class="bi bi-people"></i> <span>Kế hoạch đồng hành</span>
+          </a>
         </nav>
       </div>
 
-      <!-- <div class="logout-wrap">
-        <button class="logout-btn">Đăng xuất</button>
+      <!-- <div class="logout-wrap" style="margin-top: auto;">
+        <button class="logout-btn">
+          <i class="bi bi-box-arrow-right"></i> Đăng xuất
+        </button>
       </div> -->
     </aside>
 
@@ -60,10 +79,19 @@
 
   </div>
 
-  <script src="assets/js/pages/course-management.js"></script>
+  <!-- <script src="assets/js/pages/course-management.js"></script>
   <script src="assets/js/pages/course-approval.js"></script>
-  <script src="assets/js/pages/course-setting.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/pages/course-setting.js"></script> -->
+  <script src="main.js"></script>
+  <script type="module" src="modules/home/home.js"></script>
+  <script type="module" src="modules/ai_chat/ai_chat.js"></script>
+  <script type="module" src="modules/companion/companion.js"></script>
+  <script type="module" src="modules/companion/lead_trip/lead_trip.js"></script>
+  <script type="module" src="modules/companion/invite/invite.js"></script>
+  <script type="module" src="modules/trip/trip.js"></script>
+  <script type="module" src="modules/trip/general/general.js"></script>
+  <script type="module" src="modules/trip/timeline/timeline.js"></script>
+  <script type="module" src="modules/trip/finance/finance.js"></script>
 </body>
 
 </html>

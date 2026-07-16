@@ -1,0 +1,75 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ke hoach dong hanh - NextTrip</title>
+    <link rel="stylesheet" href="modules/companion/companion.css">
+    <link rel="stylesheet" href="components/trip/card.css">
+    <link rel="stylesheet" href="components/nav_bar/nav.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<div class="card-container" id="lead-trip-list">
+  </div>
+
+<div id="invite-companion-modal" class="modal hidden">
+  <div class="modal-content" style="border-radius: 20px; padding: 25px; max-width: 500px; background: #e2e8f0;">
+    <h3 style="color: #1e40af; text-align: center; margin-bottom: 20px; font-weight: 700; font-size: 20px;">Mời bạn đồng hành</h3>
+    
+    <div style="background: #ffffff; padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+      <label style="font-weight: 700; font-size: 13px; color: #334155; display: block; margin-bottom: 6px;">Mã mời chuyến đi hiện tại</label>
+      <div style="display: flex; gap: 10px;">
+        <input type="text" id="share-code-input" value="NT-DANANG-2024" readonly 
+               style="background: #f8fafc; color: #4338ca; font-weight: 700; text-align: center; width: 100%; border: 1px solid #cbd5e1; border-radius: 50px; padding: 10px;">
+        <button class="btn btn-light" id="btn-copy-code" style="padding: 0 15px; border-radius: 50px;"><i class="bi bi-copy"></i></button>
+      </div>
+    </div>
+
+    <div class="sub-tabs" style="display: flex; background: white; padding: 4px; border-radius: 50px; margin-bottom: 20px; border: 1px solid #cbd5e1;">
+      <div class="sub-tab active" data-subtab="id" style="flex: 1; text-align: center; padding: 8px; border-radius: 50px; cursor: pointer; font-weight: 700; font-size: 14px;">Mời bằng ID</div>
+      <div class="sub-tab" data-subtab="phone" style="flex: 1; text-align: center; padding: 8px; border-radius: 50px; cursor: pointer; font-weight: 700; font-size: 14px; color: #64748b;">Bằng SĐT</div>
+    </div>
+
+    <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 25px;">
+      <div class="form-group">
+        <label id="invite-label" style="font-weight: 700; margin-bottom: 8px; display: block;">Nhập ID người dùng</label>
+        <input type="text" id="invite-input" placeholder="Ví dụ: NT123456" style="width: 100%; padding: 10px 16px; border: 1px solid #cbd5e1; border-radius: 50px; outline: none;">
+      </div>
+      <div id="invite-note" style="font-size: 12px; color: #1e3a8a; margin-top: 12px; background: #eff6ff; padding: 10px; border-radius: 8px; line-height: 1.4;">
+        ID người dùng có thể tìm thấy trong <b>Hồ sơ cá nhân > Thông tin tài khoản</b>
+      </div>
+    </div>
+
+    <div class="modal-actions" style="display: flex; justify-content: center; gap: 15px;">
+      <button class="btn btn-light btn-close-invite" style="border-radius: 50px; padding: 8px 24px;">Hủy</button>
+      <button class="btn" id="btn-submit-invite" style="background: #2563eb; color: white; border-radius: 50px; padding: 8px 24px; font-weight: 600;">Xác nhận mời</button>
+    </div>
+  </div>
+</div>
+
+<div id="assign-role-modal" class="modal hidden">
+  <div class="modal-content" style="border-radius: 20px; padding: 25px; max-width: 450px; background: #e2e8f0;">
+    <h3 style="color: #1e40af; text-align: center; margin-bottom: 25px; font-weight: 700; font-size: 20px;">Phân công đồng hành</h3>
+    
+    <div class="form-group" style="margin-bottom: 20px;">
+      <label style="font-weight: 700; margin-bottom: 8px; display: block;">Chọn thành viên:</label>
+      <select id="select-member" style="width: 100%; padding: 10px 16px; border-radius: 50px; border: 1px solid #cbd5e1; background: white;">
+        <option value="Nguyễn Văn A">Nguyễn Văn A</option>
+        <option value="Trần Thị B">Trần Thị B</option>
+      </select>
+    </div>
+
+    <div class="form-group" style="margin-bottom: 30px;">
+      <label style="font-weight: 700; margin-bottom: 8px; display: block;">Chọn vai trò:</label>
+      <select id="select-role" style="width: 100%; padding: 10px 16px; border-radius: 50px; border: 1px solid #cbd5e1; background: white;">
+        <option value="Phó đoàn">Phó đoàn</option>
+        <option value="Hậu cần">Hậu cần</option>
+        <option value="Thành viên">Thành viên</option>
+      </select>
+    </div>
+
+    <div class="modal-actions" style="display: flex; justify-content: center; gap: 15px;">
+      <button class="btn btn-light btn-close-assign" style="border-radius: 50px; padding: 8px 24px;">Hủy</button>
+      <button class="btn" id="btn-submit-assign" style="background: #2563eb; color: white; border-radius: 50px; padding: 8px 24px; font-weight: 600;">Phân công</button>
+    </div>
+  </div>
+</div>

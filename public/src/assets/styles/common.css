@@ -1,0 +1,76 @@
+/* ================= SYSTEM VARIABLES & UTILITIES ================= */
+:root {
+  /* Hệ màu sắc chính */
+  --primary: #276FBC;
+  --primary-gradient: linear-gradient(90deg, #2d6ac1, #72afd1);
+  --success: #4caf50;
+  --success-hover: #43a047;
+  --danger: #e53935;
+  --danger-hover: #d32f2f;
+  
+  /* Hệ màu sắc bổ trợ */
+  --light-blue: #7bbbe9;
+  --light-blue-hover: #78c7e6;
+  --blue-btn: #1976d2;
+  --blue-btn-hover: #1565c0;
+  --gray-light: #e0e0e0;
+  --gray-light-hover: #d5d5d5;
+  
+  /* Màu mini button */
+  --mini-red: #ef5350;
+  --mini-green: #66bb6a;
+  --mini-blue: #42a5f5;
+  --mini-blue-hover: #1e88e5;
+  --mini-gray: #ccc;
+  --mini-gray-text: #666;
+
+  /* Màu text & nền ứng dụng */
+  --text-main: #2c3e50;
+  --text-dark: #333;
+  --text-menu: #444;
+  --bg-main: #f1f4f8;
+  --bg-card: #ffffff;
+  --bg-table-head: #f8fafc;
+  --bg-table-hover: #f5f9ff;
+  
+  /* Đường viền */
+  --border-color: #e0e6ed;
+  --border-light: #eef2f6;
+  --border-input: #dcdfe6;
+  --border-modal: #ccc;
+
+  /* Bo góc & Hiệu ứng shadow */
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(91, 156, 226, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  
+  /* Hiệu ứng chuyển động */
+  --transition: all 0.25s ease;
+  --transition-fast: 0.2s;
+}
+
+/* Các class trạng thái dùng chung (Text, Badge...) */
+.status-text {
+  font-weight: 600;
+}
+
+.status-text.open {
+  color: #2e7d32; /* Giữ màu xanh lục đậm của trạng thái open */
+}
+
+.status-text.closed {
+  color: #c62828; /* Giữ màu đỏ đậm của trạng thái closed */
+}
+
+.approval-status-text {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Class ẩn phần tử hỗ trợ JavaScript */
+.hidden {
+  display: none !important;
+}

@@ -1,0 +1,26 @@
+/* ================= NAVIGATION TABS ================= */
+.nav-tabs {
+  display: flex;
+  gap: 10px;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 50px;
+  width: fit-content;
+  margin-bottom: 25px;
+  border: 1px solid #e0e6ed;
+}
+
+.nav-tab {
+  padding: 10px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #64748b;
+  transition: var(--transition);
+}
+
+.nav-tab.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}

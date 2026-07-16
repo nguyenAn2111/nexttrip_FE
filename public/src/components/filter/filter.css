@@ -1,0 +1,31 @@
+/* ================= FILTER & SEARCH BAR ================= */
+.filter-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-row label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filter-row input,
+.filter-row select {
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-input);
+  font-size: 14px;
+  min-width: 120px;
+}
+
+.filter-row input:focus,
+.filter-row select:focus {
+  outline: none;
+  border-color: var(--success);
+}
+
+.course-setting-filter-row {
+  width: 100%;
+}

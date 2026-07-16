@@ -1,0 +1,172 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyến đi của tôi - NextTrip</title>
+    <link rel="stylesheet" href="modules/trip/trip.css">
+    <link rel="stylesheet" href="components/trip/card.css">
+    <link rel="stylesheet" href="components/nav_bar/nav.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+
+<div class="trip-module-container animate-fadeIn">
+    <div class="topbar">
+        <div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                <i class="bi bi-luggage-fill" style="font-size: 30px; color: var(--primary);"></i>
+
+                <h1 style="font-size: 30px; font-weight: 700; color: var(--text-main); margin: 0;">
+                    Chuyến đi của tôi
+                </h1>
+            </div>
+
+            <p style="font-size: 16px; color: var(--text-muted); margin: 0;">
+                Quản lý, theo dõi chuyến đi bạn tham gia
+            </p>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-blue" id="createNewTripBtn">
+                <i class="fas fa-plus"></i> Tạo chuyến đi mới
+            </button>
+        </div>
+
+    </div>
+
+    <div class="panel filter-panel">
+        <div class="filter-row">
+            <div class="filter-item">
+                <label for="tripStatusFilter">Trạng thái</label>
+                <select id="tripStatusFilter">
+                    <option value="all">Tất cả</option>
+                    <option value="planning">Đang lập kế hoạch</option>
+                    <option value="ongoing">Đang diễn ra</option>
+                    <option value="completed">Đã kết thúc</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="trip-list" id="tripListGrid">
+    </div>
+
+    <div id="createTripModal" class="modal hidden">
+    <div class="modal-content" style="width: 550px;">
+        <h3 style="color: var(--primary); margin-bottom: 15px; border-bottom: 1px solid #eef2f6; padding-bottom: 10px;">
+            <i class="fas fa-plus-circle"></i> Tạo chuyến đi mới
+        </h3>
+        
+        <form id="createTripForm">
+            <div class="form-group">
+                <label for="tripTitle">Tên chuyến đi</label>
+                <input type="text" id="tripTitle" placeholder="VD: Du lịch gia đình Đà Nẵng..." required>
+            </div>
+            
+            <div class="split-layout">
+                <div class="form-group" style="flex: 1;">
+                    <label for="tripCode">Mã chuyến đi (Code)</label>
+                    <input type="text" id="tripCode" placeholder="VD: DN2026" required>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="tripDestination">Điểm đến</label>
+                    <input type="text" id="tripDestination" placeholder="VD: Đà Nẵng" required>
+                </div>
+            </div>
+
+            <div class="split-layout">
+                <div class="form-group" style="flex: 1;">
+                    <label for="tripStartDate">Ngày bắt đầu</label>
+                    <input type="date" id="tripStartDate" required>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="tripEndDate">Ngày kết thúc</label>
+                    <input type="date" id="tripEndDate" required>
+                </div>
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="tripStatus">Trạng thái</label>
+                <select id="tripStatus">
+                    <option value="planning">Đang lập kế hoạch (Planning)</option>
+                    <option value="ongoing">Đang diễn ra (Ongoing)</option>
+                    <option value="completed">Đã kết thúc (Completed)</option>
+                </select>
+            </div> -->
+
+            <div class="form-group">
+                <label for="tripDescription">Mô tả chi tiết</label>
+                <textarea id="tripDescription" rows="3" style="padding: 8px 10px; border-radius: 8px; border: 1px solid #dcdfe6; font-family: inherit; font-size: 14px;" placeholder="Nhập mô tả về chuyến đi..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="tripImage">Ảnh bìa (Tải lên từ máy)</label>
+                <input type="file" id="tripImage" accept="image/png, image/jpeg, image/jpg" style="padding: 5px;">
+            </div>
+
+            <div class="modal-actions" style="margin-top: 20px;">
+                <button type="button" class="btn btn-light" id="cancelCreateTripBtn">Hủy</button>
+                <button type="submit" class="btn btn-blue" id="confirmCreateTripBtn">Xác nhận thêm mới</button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+
+    <div id="updateTripModal" class="modal hidden">
+    <div class="modal-content" style="width: 550px;">
+        <h3 style="color: var(--primary); margin-bottom: 15px; border-bottom: 1px solid #eef2f6; padding-bottom: 10px;">
+            <i class="fas fa-edit"></i> Cập nhật chuyến đi
+        </h3>
+        
+        <form id="updateTripForm">
+            <input type="hidden" id="updateTripId">
+
+            <div class="form-group">
+                <label for="updateTripTitle">Tên chuyến đi</label>
+                <input type="text" id="updateTripTitle" required>
+            </div>
+            
+            <div class="split-layout">
+                <div class="form-group" style="flex: 1;">
+                    <label for="updateTripCode">Mã chuyến đi (Code)</label>
+                    <input type="text" id="updateTripCode" required>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="updateTripDestination">Điểm đến</label>
+                    <input type="text" id="updateTripDestination" required>
+                </div>
+            </div>
+
+            <div class="split-layout">
+                <div class="form-group" style="flex: 1;">
+                    <label for="updateTripStartDate">Ngày bắt đầu</label>
+                    <input type="date" id="updateTripStartDate" required>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="updateTripEndDate">Ngày kết thúc</label>
+                    <input type="date" id="updateTripEndDate" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="updateTripStatus">Trạng thái</label>
+                <select id="updateTripStatus">
+                    <option value="PLANNING">Đang lập kế hoạch (Planning)</option>
+                    <option value="PROCESSING">Đang diễn ra (Processing)</option>
+                    <option value="END">Đã kết thúc (End)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="updateTripDescription">Mô tả chi tiết</label>
+                <textarea id="updateTripDescription" rows="3" style="padding: 8px 10px; border-radius: 8px; border: 1px solid #dcdfe6; font-family: inherit; font-size: 14px;"></textarea>
+            </div>
+
+            <div class="modal-actions" style="margin-top: 20px;">
+                <button type="button" class="btn btn-light" id="cancelUpdateTripBtn">Hủy</button>
+                <button type="submit" class="btn btn-blue" id="confirmUpdateTripBtn">Lưu thay đổi</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

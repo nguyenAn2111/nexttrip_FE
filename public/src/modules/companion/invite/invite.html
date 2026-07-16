@@ -1,0 +1,24 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ke hoach dong hanh - NextTrip</title>
+    <link rel="stylesheet" href="modules/companion/companion.css">
+    <link rel="stylesheet" href="components/trip/card.css">
+    <link rel="stylesheet" href="components/nav_bar/nav.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<div class="card-container" id="invite-trip-list"></div>
+
+<div id="join-code-modal" class="modal hidden">
+  <div class="modal-content" style="border-radius: 20px; padding: 25px; max-width: 450px;">
+    <h3 style="color: var(--primary); text-align: center; margin-bottom: 15px;">Tham gia chuyến đi bằng mã</h3>
+    <div class="form-group">
+      <label for="trip-code-input" style="text-align: center; display: block; margin-bottom: 10px;">Nhập mã chuyến đi bạn muốn tham gia:</label>
+      <input type="text" id="trip-code-input" placeholder="Ví dụ: TRIP-XZY123" style="text-align: center; text-transform: uppercase;">
+    </div>
+    <div class="modal-actions" style="justify-content: center; gap: 15px; margin-top: 15px;">
+      <button id="btn-modal-close" class="btn btn-light" style="border-radius: 50px; padding: 8px 24px;">Hủy</button>
+      <button id="btn-modal-submit" class="btn btn-blue" style="border-radius: 50px; padding: 8px 24px;">Tham gia</button>
+    </div>
+  </div>
+</div>

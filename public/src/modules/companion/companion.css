@@ -1,0 +1,60 @@
+/* ================= COMPANION PAGE ================= */
+.companion-header {
+  margin-bottom: 30px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Tùy chỉnh trip-card cho phù hợp với yêu cầu ảnh */
+.companion-card .trip-card-body {
+  grid-template-columns: 1fr 1fr;
+}
+
+.status-badge,
+.trip-status-badge {
+  background: #f0fdf4;
+  color: #166534;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.trip-status-badge.status-planning {
+  background-color: #f59e0b;
+  color: #ffffff;
+}
+
+.trip-status-badge.status-processing {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+.trip-status-badge.status-end {
+  background-color: #6b7280;
+  color: #ffffff;
+}
+
+/* Style bổ sung cho sub-tab trong modal Mời bạn */
+.sub-tab.active {
+  background: #2563eb;
+  color: white !important;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+}
+
+.modal.hidden {
+  display: none !important;
+}
+
+/* Tùy biến input và select bo tròn */
+.modal-content input[type="text"], .modal-content select {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 50px;
+  outline: none;
+}

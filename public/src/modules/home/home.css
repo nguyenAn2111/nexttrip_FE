@@ -1,0 +1,299 @@
+/* ================= HOME PAGE STYLES ================= */
+.home-header {
+  margin-bottom: 20px;
+}
+
+.home-greeting {
+  font-size: 16px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.home-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.home-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ================= HERO BANNER ================= */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 24px;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80'); /* Ảnh Vịnh Hạ Long */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* SEARCH BOX */
+.search-wrapper {
+  background: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+  padding: 8px 8px 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.search-wrapper i {
+  color: var(--text-muted);
+  font-size: 18px;
+  margin-right: 12px;
+}
+
+.search-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+.search-wrapper input::placeholder {
+  color: #999;
+}
+
+.btn-ai-plan {
+  background: linear-gradient(90deg, #7F56D9, #9b72ea);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(127, 86, 217, 0.3);
+}
+
+.btn-ai-plan:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(127, 86, 217, 0.4);
+}
+
+/* SUGGESTIONS */
+.suggestions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.suggestion-label {
+  font-weight: 600;
+}
+
+.suggestion-tag {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.suggestion-tag:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* ================= TRIPS GRID ================= */
+.section-header {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* TRIP CARD */
+.trip-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.trip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.trip-img-wrap {
+  position: relative;
+  height: 140px;
+  width: 100%;
+}
+
+.trip-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-days {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(59, 130, 246, 0.85); /* Xanh dương mờ */
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+.trip-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.trip-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.trip-status-label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.trip-status-label.planning {
+  color: #ff7f00; /* orange for PLANNING */
+}
+
+.trip-status-label.processing {
+  color: #2e8b57; /* green for PROCESSING */
+}
+
+.trip-status-label.other {
+  color: var(--text-muted);
+}
+
+.trip-date {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.trip-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.trip-footer i {
+  margin-right: 4px;
+}
+
+/* AVATAR GROUP */
+.avatar-group {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-group img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -8px;
+  object-fit: cover;
+}
+
+.avatar-group img:first-child {
+  margin-left: 0;
+}
+
+.avatar-more {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 2px solid white;
+  margin-left: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  z-index: 1;
+}
+
+/* ADD NEW TRIP CARD
+.trip-card-add {
+  background: transparent;
+  border: 2px dashed #cbd5e1;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.trip-card-add:hover {
+  background: rgba(39, 111, 188, 0.05);
+  border-color: var(--primary);
+}
+
+.btn-icon-add {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 12px;
+} */

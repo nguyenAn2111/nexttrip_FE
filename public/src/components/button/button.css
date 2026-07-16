@@ -1,0 +1,126 @@
+/* ================= BUTTONS SYSTEM ================= */
+/* Standard Buttons */
+.btn {
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: var(--transition-fast);
+}
+
+.btn-green {
+  background: var(--success);
+  color: white;
+}
+
+.btn-green:hover {
+  background: var(--success-hover);
+}
+
+.btn-red {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-red:hover {
+  background: var(--danger-hover);
+}
+
+.btn-blue {
+  background: var(--blue-btn);
+  color: white;
+}
+
+.btn-blue:hover {
+  background: var(--blue-btn-hover);
+}
+
+.btn-light {
+  background: var(--gray-light);
+  color: var(--text-dark);
+}
+
+.btn-light:hover {
+  background: var(--gray-light-hover);
+}
+
+/* Mini Table Buttons */
+.mini-btn {
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.mini-btn.btn-small {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.mini-btn.red {
+  background: var(--mini-red);
+  color: white;
+}
+
+.mini-btn.red:hover {
+  background: var(--danger);
+}
+
+.mini-btn.green {
+  background: var(--mini-green);
+  color: white;
+}
+
+.mini-btn.green:hover {
+  background: var(--success);
+}
+
+.mini-btn.blue {
+  background: var(--mini-blue);
+  color: white;
+}
+
+.mini-btn.blue:hover {
+  background: var(--mini-blue-hover);
+}
+
+.mini-btn.gray {
+  background: var(--mini-gray);
+  color: var(--mini-gray-text);
+  cursor: not-allowed;
+}
+
+/* Specific Context Buttons */
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--mini-red);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: var(--danger);
+}
+
+#addCourseBtn {
+  margin-left: auto;        
+  padding: 10px 18px;       
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+}
+
+#submitAddCourse {
+  background: var(--blue-btn-hover);
+  color: white;
+}
+
+#submitAddCourse:hover {
+  background: var(--light-blue-hover);
+}

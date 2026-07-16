@@ -1,0 +1,106 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyến đi của tôi - NextTrip</title>
+    <link rel="stylesheet" href="modules/trip/trip.css">
+    <link rel="stylesheet" href="components/trip/card.css">
+    <link rel="stylesheet" href="components/nav_bar/nav.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<div class="timeline-container animate-fadeIn">
+    <div class="panel filter-panel" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="filter-row">
+            <label for="daySelect">Chọn Ngày:</label>
+            <select id="daySelect">
+                <option value="day1"></option>
+                <option value="day2"></option>
+                <option value="day3"></option>
+            </select>
+        </div>
+        <div class="button-group" style="display: flex; gap: 8px; align-items: center;">
+        <button class="btn btn-green" id="addActivityBtn">
+            <i class="fas fa-plus"></i> Thêm hoạt động
+        </button>
+        <button class="btn btn-blue" id="addItineraryBtn">
+            <i class="fas fa-plus"></i> Thêm ngày lịch trình 
+        </button>
+    </div>
+    </div>
+
+    <div class="panel table-panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 150px;">Thời gian</th>
+                        <th style="text-align: center;">Hoạt động chi tiết</th>
+                        <th style="width: 300px;">Ghi chú</th>
+                        <!-- <th style="width: 150px;">Hành động</th> -->
+                    </tr>
+                </thead>
+                <tbody id="timelineTableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="timeline-container animate-fadeIn">
+    </div>
+
+<div id="addItineraryModal" class="modal hidden">
+    <div class="modal-content">
+        <h3>Thêm Ngày Lịch Trình</h3>
+        <form id="addItineraryForm">
+            <div class="form-group">
+                <label for="itineraryDayNumber">Ngày thứ mấy?</label>
+                <input type="number" id="itineraryDayNumber" min="1" required placeholder="VD: 1">
+            </div>
+            <div class="form-group">
+                <label for="itineraryDate">Ngày tháng năm</label>
+                <input type="date" id="itineraryDate" required>
+            </div>
+            <div class="form-group">
+                <label for="itineraryTitle">Tiêu đề ngày</label>
+                <input type="text" id="itineraryTitle" required placeholder="VD: Đà Nẵng - Khởi động">
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-light" id="closeItineraryModal">Hủy</button>
+                <button type="submit" class="btn btn-blue">Xác nhận</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="addActivityModal" class="modal hidden">
+    <div class="modal-content">
+        <h3>Thêm Hoạt Động Mới</h3>
+        <form id="addActivityForm">
+            <div class="form-group">
+                <label for="actName">Tên hoạt động</label>
+                <input type="text" id="actName" required placeholder="VD: Tham quan Cầu Rồng">
+            </div>
+            <div class="form-group" style="display: flex; gap: 10px; flex-direction: row;">
+                <div style="flex: 1;">
+                    <label for="actStartTime">Giờ bắt đầu</label>
+                    <input type="time" id="actStartTime" required>
+                </div>
+                <div style="flex: 1;">
+                    <label for="actEndTime">Giờ kết thúc</label>
+                    <input type="time" id="actEndTime" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="actLocation">Địa điểm</label>
+                <input type="text" id="actLocation" placeholder="VD: Cầu Rồng, Đà Nẵng">
+            </div>
+            <div class="form-group">
+                <label for="actNote">Ghi chú</label>
+                <input type="text" id="actNote" placeholder="VD: Mang theo máy ảnh">
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-light" id="closeActivityModal">Hủy</button>
+                <button type="submit" class="btn btn-blue">Xác nhận</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

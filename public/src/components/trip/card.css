@@ -1,0 +1,82 @@
+/* ================= TRIP CARD COMPONENT ================= */
+.trip-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e0e6ed;
+  border-radius: 20px; /* Tăng bo góc một chút cho hợp với card lớn */
+  padding: 20px;       /* Tăng padding từ 16px -> 20px để card cao hơn */
+  gap: 24px;           /* Tăng khoảng cách giữa ảnh và chữ */
+  transition: all 0.2s ease;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* Đổ bóng mịn hơn */
+}
+
+.trip-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px); /* Hiệu ứng nổi nhẹ khi di chuột */
+}
+
+/* Ảnh bìa - ĐÃ TĂNG KÍCH THƯỚC */
+.trip-card-image {
+  width: 280px;        /* Tăng từ 220px -> 280px */
+  height: 160px;       /* Tăng từ 120px -> 160px */
+  border-radius: 14px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Khu vực thông tin */
+.trip-card-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Chia cột nội dung */
+  gap: 16px;           /* Tăng khoảng cách giữa các dòng thông tin */
+  align-items: center;
+}
+
+.trip-title {
+  grid-column: span 2; /* Tiêu đề chiếm trọn chiều rộng */
+  font-size: 20px;     /* Tăng nhẹ font chữ cho cân xứng với card to */
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.trip-info-item {
+  font-size: 15px;     /* Tăng từ 14px -> 15px */
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Định dạng các khối bọc nội dung đặc biệt như thời gian, trạng thái */
+.trip-info-item div {
+  display: inline-block;
+}
+
+.trip-info-item span {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* Khu vực hành động (Nút) */
+.trip-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;           /* Tăng khoảng cách giữa các nút bấm */
+  justify-content: center;
+  padding-left: 24px;
+  border-left: 1px solid #edf2f7;
+  align-self: stretch; /* Kéo dài đường border-left dọc theo chiều cao card */
+}
+
+/* Định hình lại nút bấm trong card cho dày dặn hơn */
+.trip-card-actions .mini-btn {
+  padding: 8px 18px;
+  font-weight: 600;
+  border-radius: 50px; /* Bo tròn hẳn nút bấm giống trong ảnh thiết kế */
+  font-size: 14px;
+  white-space: nowrap;
+}

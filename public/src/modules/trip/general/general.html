@@ -1,0 +1,79 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyến đi của tôi - NextTrip</title>
+    <link rel="stylesheet" href="modules/trip/trip.css">
+    <link rel="stylesheet" href="components/trip/card.css">
+    <link rel="stylesheet" href="components/nav_bar/nav.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<div class="trip-detail-container">
+    <div class="trip-detail-header">
+        <div class="trip-title-area">
+            <div>
+                <span style="color: #2f8dd0; font-size: 13px; margin-bottom: auto;">TÊN CHUYẾN ĐI</span>
+                  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 5px;">
+                <i class="bi bi-geo" style="font-size: 30px; color: var(--primary);"></i>
+                <h1 class="topbar-title" id="detailTripTitle"></h1></div>
+            </div>
+    
+            <div class="actions">
+                <!-- <button class="btn btn-light" id="editTripBtn"><i class="fas fa-edit"></i> Sửa</button> -->
+                <!-- <button class="btn btn-red" id="closeDetailBtn"><i class="fas fa-arrow-left"></i> Quay lại</button> -->
+            </div>
+        </div>
+
+        <div class="sub-nav-tabs">
+            <div class="sub-tab-item active" data-tab="general">Tổng quan</div>
+            <div class="sub-tab-item" data-tab="timeline">Lịch trình</div>
+            <div class="sub-tab-item" data-tab="finance">Ngân sách</div>
+        </div>
+    </div>
+
+    <div id="trip-sub-content">
+        <div class="split-layout">
+            <div class="panel form-panel">
+                <h3 class="section-title"><i class="fas fa-info-circle"></i> Thông tin chuyến đi</h3>
+                <!-- <div id="tripGeneralStatus" style="color:#7f8c8d; padding: 12px 0;">Đang tải thông tin chuyến đi...</div> -->
+                <div id="tripGeneralInfo" style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                    <div><strong>Địa điểm:</strong> <span id="infoLocation">Đang tải...</span></div>
+                    <div><strong>Ngày bắt đầu:</strong> <span id="infoStartDate">-</span></div>
+                    <div><strong>Ngày kết thúc:</strong> <span id="infoEndDate">-</span></div>
+                    <div><strong>Số lượng thành viên:</strong> <span id="infoMembers">-</span></div>
+                    <div class="form-group" style="margin-top: 10px;">
+                        <label><i class="far fa-sticky-note"></i> Ghi chú chuyến đi</label>
+                        <textarea id="infoDescription" class="filter-row" style="width:100%; height:80px; padding:10px; border-radius:8px; border:1px solid #dcdfe6;" readonly>Đang tải nội dung...</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel table-panel">
+                <h3 class="section-title"><i class="fas fa-wallet"></i> Chi phí tổng quan</h3>
+                <div class="table-wrap" style="margin-top: 15px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Hạng mục</th>
+                                <th>Ngân sách dự tính</th>
+                                <th>Đã chi thực tế</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Lưu trú</td></tr>
+                            <tr><td>Di chuyển</td></tr>
+                            <tr><td>Ăn uống</td><td>3.000.000 ₫</td><td>0 ₫</td></tr>
+                            <tr><td>Hoạt động / Vé</td></tr>
+                            <tr><td>Chi phí khác</td></tr>
+                            <tr style="font-weight: bold; background: #f8fafc;">
+                                <td>Tổng chi phí</td>
+                                <td style="color:#276FBC;">11.900.000 ₫</td>
+                                <td style="color:#e53935;">5.556.151 ₫</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

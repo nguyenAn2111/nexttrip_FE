@@ -1,0 +1,141 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyến đi của tôi - NextTrip</title>
+    <link rel="stylesheet" href="modules/trip/trip.css">
+    <link rel="stylesheet" href="components/trip/card.css">
+    <link rel="stylesheet" href="components/nav_bar/nav.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<div class="finance-container animate-fadeIn">
+    <div class="panel filter-panel" style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 class="section-title" style="margin: 0;"><i class="fas fa-calculator"></i> Bảng thống kê tài chính </h3>
+        <div class="actions">
+            <!-- <button class="btn btn-green" id="exportExcelBtn"><i class="fas fa-file-export"></i> Xuất file</button> -->
+            <button class="btn btn-blue" id="addExpenseBtn"><i class="fas fa-plus"></i> Thêm khoản chi</button>
+        </div>
+    </div>
+
+    <div class="panel table-panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">STT</th>
+                        <th style="text-align: center;">Nội dung chi</th>
+                        <th>Loại chi phí</th>
+                        <th>Số tiền</th>
+                        <th>Người chi</th>
+                        <th>Ghi chú</th>
+                    </tr>
+                </thead>
+                <tbody id="financeTableBody">
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="summary-box" style="margin-top: 25px; padding: 18px; background: #f8fafc; border-radius: 8px; border: 1px solid #e0e6ed;">
+
+            <div>Tổng số tiền đã chi: <strong style="color: #e53935;" id="totalExpenses">0 ₫</strong></div>
+        </div>
+    </div>
+
+
+    <div id="createExpenseModal" class="modal hidden">
+    <div class="modal-content" style="width: 600px; padding: 25px;">
+        <h3 style="color: #276FBC; margin-bottom: 20px; font-size: 18px;">
+            <i class="fas fa-wallet"></i> Quản lý tài chính
+        </h3>
+        
+        <div class="modal-tabs" style="display: flex; gap: 10px; border-bottom: 2px solid #eef2f6; margin-bottom: 20px;">
+            <button class="tab-btn active" data-tab="actual-tab" style="padding: 10px 15px; border: none; background: none; border-bottom: 2px solid #276FBC; color: #276FBC; font-weight: 600; cursor: pointer;">
+                Chi phí thực tế
+            </button>
+            <button class="tab-btn" data-tab="estimate-tab" style="padding: 10px 15px; border: none; background: none; color: #7f8c8d; font-weight: 500; cursor: pointer;">
+                Dự toán (Kế hoạch)
+            </button>
+        </div>
+
+        <form id="actualExpenseForm" class="tab-content">
+            <div class="form-group">
+                <label>Nội dung chi</label>
+                <input type="text" id="expenseContent" placeholder="VD: Mua vé tham quan..." required>
+            </div>
+            
+            <div class="split-layout" style="display: flex; gap: 15px;">
+                <div class="form-group" style="flex: 1;">
+                    <label>Loại chi phí</label>
+                    <select id="expenseType" required style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+                        <option value="STAY">Chỗ ở</option>
+                        <option value="MOVE">Di chuyển</option>
+                        <option value="EAT">Ăn uống</option>
+                        <option value="ACTIVITY">Hoạt động</option>
+                        <option value="OTHER">Khác</option>
+                    </select>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label>Số tiền (VNĐ)</label>
+                    <input type="number" id="expenseCost" placeholder="VD: 500000" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Người chi</label>
+                <input type="text" id="expensePayer" placeholder="VD: An Nguyen" required>
+            </div>
+
+            <div class="form-group">
+                <label>Ghi chú</label>
+                <textarea id="expenseNote" rows="2" placeholder="Ghi chú thêm..."></textarea>
+            </div>
+
+            <div class="modal-actions" style="margin-top: 20px; text-align: right;">
+                <button type="button" class="btn btn-light cancel-modal-btn">Hủy</button>
+                <button type="submit" class="btn btn-blue">Xác nhận chi</button>
+            </div>
+        </form>
+
+        <form id="estimateExpenseForm" class="tab-content hidden" style="display: none;">
+            <div class="split-layout" style="display: flex; gap: 15px;">
+                <div class="form-group" style="flex: 1;">
+                    <label><i class="fas fa-bed"></i> Dự kiến chi phí lưu trú</label>
+                    <input type="number" id="estStay" value="0" required>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label><i class="fas fa-bus"></i> Dự kiến chi phí di chuyển</label>
+                    <input type="number" id="estMove" value="0" required>
+                </div>
+            </div>
+
+            <div class="split-layout" style="display: flex; gap: 15px;">
+                <div class="form-group" style="flex: 1;">
+                    <label><i class="fas fa-utensils"></i> Dự kiến chi phí ăn uống</label>
+                    <input type="number" id="estEat" value="0" required>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label><i class="fas fa-ticket-alt"></i> Dự kiến chi phí hoạt động - vé</label>
+                    <input type="number" id="estAct" value="0" required>
+                </div>
+            </div>
+
+            <div class="split-layout" style="display: flex; gap: 15px;">
+                <div class="form-group" style="flex: 1;">
+                    <label><i class="fas fa-box"></i> Dự kiến chi phí khác</label>
+                    <input type="number" id="estOther" value="0" required>
+                </div>
+                <!-- <div class="form-group" style="flex: 1;">
+                    <label><i class="fas fa-hand-holding-usd"></i> Tổng quỹ thu dự kiến</label>
+                    <input type="number" id="estRevenue" value="0" required>
+                </div> -->
+            </div>
+
+            <div class="modal-actions" style="margin-top: 20px; text-align: right;">
+                <button type="button" class="btn btn-light cancel-modal-btn">Hủy</button>
+                <button type="submit" class="btn btn-blue">Lưu dự toán</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</div>

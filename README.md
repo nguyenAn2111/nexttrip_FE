@@ -1,3 +1,3 @@
-# ET4711_QLHP_FE
+# AI Powered Trip Planner
 
 run: node sever.js
