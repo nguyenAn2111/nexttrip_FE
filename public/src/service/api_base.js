@@ -1,5 +1,5 @@
-// Cấu hình URL gốc cố định của Backend cổng 8000
-const API_BASE_URL = "http://localhost:8000/";
+// Cấu hình URL gốc cố định của Backend cổng 5111
+const API_BASE_URL = "http://localhost:5111/";
 
 /**
  * @param {string} path - Đường dẫn API (lấy từ API_STORAGE)
